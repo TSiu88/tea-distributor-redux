@@ -33,7 +33,7 @@ This application is the Week 16 Friday independent assignment for Epicodus' full
 
 ### Component Diagram
 
-![Component Diagram](./snippet1.png)
+![Component Diagram](./public/Component-Diagram.png)
 
 ## Setup/Installation Requirements
 
