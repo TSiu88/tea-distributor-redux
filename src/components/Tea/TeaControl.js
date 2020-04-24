@@ -100,21 +100,26 @@ class TeaControl extends React.Component {
     this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
   }
 
+  handleAddingTeaToList = (newTea) => {
+    const newMasterTeaList = this.state.masterTeaList.concat(newTea);
+    this.setState({masterTeaList: newMasterTeaList,
+      formVisibleOnPage: false});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <AddTeaForm />
+      currentlyVisibleState = <AddTeaForm onAddTea={this.handleAddingTeaToList.AddingTeaToList} />
       buttonText = "Return to Tea List"
     } else {
-      currentlyVisibleState = <TeaList />
-      buttonText = "Add tea";
+      currentlyVisibleState = <TeaList teaList={this.state.masterTeaList}/>
+      buttonText = "Add Tea";
     }
     return (
       <React.Fragment>
         <button onClick={this.handleToggleForms}>{buttonText}</button>
         {currentlyVisibleState}
-        
       </React.Fragment>
       
     )
