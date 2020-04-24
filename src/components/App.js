@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
   return (
     <React.Fragment>
-      <h1>Tea Distributor</h1>
-      
+      <Header />
       <hr/>
+      <Footer />
     </React.Fragment>
   );
 }
