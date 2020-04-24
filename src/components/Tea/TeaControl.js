@@ -93,6 +93,7 @@ class TeaControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       masterTeaList: masterTeaList,
+      quantityChanged: false,
     };
   }
 
@@ -106,25 +107,55 @@ class TeaControl extends React.Component {
       formVisibleOnPage: false});
   }
 
-  render(){
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <AddTeaForm onAddTea={this.handleAddingTeaToList} />
-      buttonText = "Return to Tea List"
-    } else {
-      currentlyVisibleState = <TeaList teaList={this.state.masterTeaList}/>
-      buttonText = "Add Tea";
+  handleChangingQuantity = (id) => {
+    const quantityChanged = this.state.masterTeaList.filter((tea) => tea.id === id)[0];
+    quantityChanged.quantity -= 1;
+    if (quantityChanged.quantity <= 0) {
+      quantityChanged.quantity = 0;
     }
-    return (
-      <React.Fragment>
-        <button onClick={this.handleToggleForms}>{buttonText}</button>
-        {currentlyVisibleState}
-      </React.Fragment>
-      
-    )
+    this.setState({quantityChanged: quantityChanged});
+    this.setState({quantityCharged: false});
   }
 
+  setVisability = () => {
+    if(this.state.quantityChanged){
+      return {
+        component: (
+          <TeaList
+            onQuantityChanged={this.handleChangingQuantity}
+            teaList={this.state.masterTeaList} />
+        ),
+      };
+    }
+    else if (this.state.formVisibleOnPage) {
+      return {
+        component: (
+          <AddTeaForm
+            onAddTea={this.handleAddingTeaToList} />
+        ),
+        buttonText: "Return to Tea List",
+      };
+    } else {
+      return {
+        component: (
+          <TeaList
+            onQuantityChanged={this.handleChangingQuantity} 
+            teaList={this.state.masterTeaList}/>
+        ),
+        buttonText: "Add Tea",
+      };
+    }
+  }
+
+  render(){
+    let currentlyVisibleState = this.setVisability();
+    return (
+      <React.Fragment>
+        <button onClick={this.handleToggleForms}>{currentlyVisibleState.buttonText}</button>
+        {currentlyVisibleState.component}
+      </React.Fragment> 
+    )
+  }
 }
 
 export default TeaControl;

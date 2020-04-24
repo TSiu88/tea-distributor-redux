@@ -25,7 +25,7 @@ function TeaCard(props){
         </div>
         <div className="card-amount">
           <p>Amount Remaining: {props.amount}</p>
-          <button className="btn btn-secondary">Sell Tin</button> 
+          <button className="btn btn-secondary" onClick={() => props.whenQuantityChanged(props.id)}>Sell Tin</button> 
         </div>
         
       </div>
@@ -34,6 +34,7 @@ function TeaCard(props){
 }
 
 TeaCard.propTypes = {
+  whenQuantityChanged: PropTypes.func,
   name: PropTypes.string,
   type: PropTypes.string,
   origin: PropTypes.string,

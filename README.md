@@ -29,7 +29,7 @@
 ---
 ## Description
 
-This application is the Week 16 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course. This is an application made to show a React application made with a minimum of create and read functionality that correctly uses components, states, and properties.  A component diagram is also to be included to show the structure of the components.
+This application is the Week 16 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course. This is an application made to show a React application made with functionality that correctly uses components, states, and properties.  A component diagram is also to be included to show the structure of the components.
 
 ### Component Diagram
 
@@ -68,22 +68,9 @@ This application is the Week 16 Friday independent assignment for Epicodus' full
 * _Markdown_
 
 ## Notable Features
-<!-- _features that make project stand out_ -->
+This project uses React to make a clean, well organized page.
 
 ## Specifications
-
-<!-- <details>
-  <summary>Click to expand to view Specifications</summary>
-
-| Specification | Input | Output |
-| :-------------     | :------------- | :------------- |
-| The program displays welcome message and menu with prices | Application start | Welcome message and menu displayed |
-| The program displays special deals in readable format | Application start | Special deals displayed ("Buy 2, get 1 free" "3 for $5") |
-| The program takes input of user that is not an integer, then assume 0 ordered | Bread="aaa", Pastry="" | Bread=0, Pastry=0 |
-| The program takes number of loaves of bread and pastries and displays totals | Bread=4, Pastry=4 | Bread=$20, Pastry=$8, Total=$28 |
-| If input qualifies for special deals, costs calculated using discounted price | Bread=3, Pastry=3 | Bread=$10, Pastry=$5, Total=$15 |
-
-</details> -->
 
 ### User Stories
 <details>
@@ -130,11 +117,12 @@ _Here is a preview of what the output looks like:_
 
 </details> -->
 
-<!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
-
 ## Known Bugs
 
-_There are currently no known bugs in this program_
+- The buttons to update the quantity on the front page currently not working properly
+- Details page functionality not implemented
+
+<!-- _There are currently no known bugs in this program_ -->
 
 ## Support and contact details
 
