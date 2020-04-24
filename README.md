@@ -1,68 +1,147 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# _[Tea Distributor](https://github.com/TSiu88/#)_
 
-## Available Scripts
+#### _Week 16 Friday Independent Assignment for Epicodus, 04.24.2020_
 
-In the project directory, you can run:
+#### By _**Tiffany Siu**_
 
-### `npm start`
+<!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+![LastCommit](https://img.shields.io/github/last-commit/tsiu88/tea-distributor)
+![Languages](https://img.shields.io/github/languages/top/tsiu88/tea-distributor)
+[![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
+## Table of Contents
+1. [Description](#description)
+    - [Component Diagram](#component-diagram)
+2. [Setup/Installation Requirements](#setup/installation-requirements)
+    - [Requirements to Run](#requirements-to-run)
+    - [Instructions](#instructions)
+    - [Other Technologies Used](#other-technologies-used)
+3. [Notable Features](#notable-features)
+4. [Specifications](#specifications)
+    - [User Stories](#user-stories)
+    - [Further Exploration](#further-exploration)
+5. [Screenshots](#screenshots)
+6. [Known Bugs](#known-bugs)
+7. [Support and Contact Details](#support-and-contact-details)
+8. [License](#license)
+---
+## Description
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This application is the Week 16 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course. This is an application made to show a React application made with a minimum of create and read functionality that correctly uses components, states, and properties.  A component diagram is also to be included to show the structure of the components.
 
-### `npm test`
+### Component Diagram
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Component Diagram](./snippet1.png)
 
-### `npm run build`
+## Setup/Installation Requirements
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Requirements to Run
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* _Web Browser_
+* _Webpack_
+* _Node.js_
+* _NPM_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instructions
 
-### `npm run eject`
+*This application may be viewed by:*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
+2. Clone the [repository](https://github.com/TSiu88/tea-distributor.git) from my [GitHub page](https://github.com/TSiu88)
+3. Use a command line/Bash to move to the project directory with `cd project-directory`
+4. Run `npm install` to get all dependencies. 
+5. Run `npm run start` to start up the program
+6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Other Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* _HTML_
+* _CSS_
+* _Javascript_
+* _React_
+* _Bootstrap 4.4.1_
+* _ESLint_
+* _Babel_
+* _Jest_
+* _Markdown_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Notable Features
+<!-- _features that make project stand out_ -->
 
-## Learn More
+## Specifications
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- <details>
+  <summary>Click to expand to view Specifications</summary>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Specification | Input | Output |
+| :-------------     | :------------- | :------------- |
+| The program displays welcome message and menu with prices | Application start | Welcome message and menu displayed |
+| The program displays special deals in readable format | Application start | Special deals displayed ("Buy 2, get 1 free" "3 for $5") |
+| The program takes input of user that is not an integer, then assume 0 ordered | Bread="aaa", Pastry="" | Bread=0, Pastry=0 |
+| The program takes number of loaves of bread and pastries and displays totals | Bread=4, Pastry=4 | Bread=$20, Pastry=$8, Total=$28 |
+| If input qualifies for special deals, costs calculated using discounted price | Bread=3, Pastry=3 | Bread=$10, Pastry=$5, Total=$15 |
 
-### Code Splitting
+</details> -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### User Stories
+<details>
+  <summary>Click to expand to view User Stories </summary>
 
-### Analyzing the Bundle Size
+  - As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
+  - As a user, I want to submit a form to add a new keg to a list.
+  - As a user, I want to be able to click on a keg to see its detail page.
+  - As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
+  - As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+</details>
 
-### Making a Progressive Web App
+### Further Exploration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<details>
+  <summary>Click to expand to viewFurther Exploration topics </summary>
 
-### Advanced Configuration
+  - [ ] As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake.
+  - [ ] As a user, I want to be able to delete a keg.
+  - [ ] As a user, I want a keg to update to say "Out of Stock" once it's empty.
+  - [ ] As a user, I want kegs with less than 10 pints to include a message that says "Almost Empty" so I can try a pint before it's gone!
+  - [ ] As a user, I want to have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
+  - [ ] As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+</details>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Screenshots
 
-### `npm run build` fails to minify
+<!-- _Here is a snippet of what the input looks like:_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Snippet of input fields](img/snippet1.png)
+
+_Here is a preview of what the output looks like:_
+
+![Snippet of output box](img/snippet2.png) -->
+
+<!-- <details>
+  <summary>Expand to view More Screenshots </summary>
+
+  ![Snippet of input fields](img/snippet3.png)
+
+
+</details> -->
+
+<!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
+
+## Known Bugs
+
+_There are currently no known bugs in this program_
+
+## Support and contact details
+
+_If there are any question or concerns please contact me at my [email](mailto:tsiu88@gmail.com). Thank you._
+
+### License
+
+*This software is licensed under the MIT license*
+
+Copyright (c) 2020 **_Tiffany Siu_**
