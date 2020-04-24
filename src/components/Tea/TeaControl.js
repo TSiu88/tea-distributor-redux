@@ -110,7 +110,7 @@ class TeaControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <AddTeaForm onAddTea={this.handleAddingTeaToList.AddingTeaToList} />
+      currentlyVisibleState = <AddTeaForm onAddTea={this.handleAddingTeaToList} />
       buttonText = "Return to Tea List"
     } else {
       currentlyVisibleState = <TeaList teaList={this.state.masterTeaList}/>
