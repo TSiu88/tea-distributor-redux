@@ -3,7 +3,8 @@ import React from "react";
 function Header(){
 
   const headerStyle = {
-    textAlign: "center"
+    textAlign: "center",
+    fontFamily: "'Dancing Script', cursive",
   };
 
   return (

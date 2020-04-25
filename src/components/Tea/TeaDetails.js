@@ -1,11 +1,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
+const detailStyle = {
+  backgroundColor: "rgba(255,255,255,.5)",
+  textAlign: "center",
+};
+
 function TeaDetails(props) {
   const {tea} = props;
   return (
     <React.Fragment>
-      <div>
+      <div style={detailStyle}>
         <h1>Tea Details</h1>
         <img className="imageStyle" alt={tea.name} src={tea.image} />
         <p><strong>{tea.name}</strong></p>

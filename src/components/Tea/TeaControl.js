@@ -53,7 +53,7 @@ const masterTeaList = [
     origin: "China",
     flavor: "Sweet, creamy, silky tea",
     price: 41,
-    amount: 7,
+    amount: 12,
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_8501_2019_Silver_Needles-1.jpg?v=1571847096",
   },
   {
@@ -98,6 +98,9 @@ const masterTeaList = [
   },
 ];
 
+const buttonStyler = {
+  marginLeft: 20,
+};
 class TeaControl extends React.Component {
 
   constructor(props) {
@@ -198,8 +201,11 @@ class TeaControl extends React.Component {
     let currentlyVisibleState = this.setVisability();
     return (
       <React.Fragment>
-        <button onClick={this.handleToggleForms}>{currentlyVisibleState.buttonText}</button>
-        {currentlyVisibleState.component}
+        <div>
+          <button className="btn btn-primary" onClick={this.handleToggleForms} style={buttonStyler}>{currentlyVisibleState.buttonText}</button>
+          {currentlyVisibleState.component}
+        </div>
+        
       </React.Fragment> 
     )
   }

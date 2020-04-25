@@ -39,3 +39,16 @@
 .imageStyle {
   max-width: 200px;
 }
+
+.listStyle {
+  display: "grid";
+  max-width: 1200px;
+}
+
+@media (min-width: 600px) {
+  .listStyle { grid-template-columns: repeat (2, 1fr);}
+}
+
+@media (min-width: 900px) {
+  .listStyle { grid-template-columns: repeat (3, 1fr);}
+}

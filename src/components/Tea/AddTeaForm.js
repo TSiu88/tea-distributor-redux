@@ -24,7 +24,7 @@ function AddTeaForm(props){
 
   return (
     <React.Fragment>
-      <form onSubmit= {handleFormSubmission}>
+      <form className="formInfo" onSubmit= {handleFormSubmission}>
         <div className="form-group">
           <label htmlFor="name">
             Name:

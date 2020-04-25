@@ -10,6 +10,12 @@ function TeaCard(props){
   const cardStyle = {
     minWidth: 220,
     padding: 10,
+    margin: 10,
+    backgroundColor: "rgba(0,0,0,.2)",
+  };
+
+  const infoStyle = {
+    backgroundColor: "rgba(255,255,255,.4)",
   };
 
   const stockOutMessage = "Out of stock"
@@ -29,7 +35,7 @@ function TeaCard(props){
   return (
     <React.Fragment>
       <div className="card" style={cardStyle}>
-        <div className="card-info" onClick={() => props.whenClicked(props.id)}>
+        <div className="card-info" style={infoStyle} onClick={() => props.whenClicked(props.id)}>
           <img className="card-image" alt="Tea" style={imageStyle} src={props.image} />
           <h3><strong>{props.name}</strong></h3>
           <p>Type: {props.type}</p>
@@ -37,10 +43,10 @@ function TeaCard(props){
           <p>Flavor Description: {props.flavor}</p>
           <p>Price: ${props.price}</p>
         </div>
-        <div className="card-amount">
+        <div className="card-amount" style={infoStyle}>
           <p>{stockMessage()}</p>
           <div>
-            <button className="btn btn-secondary" onClick={() => props.whenQuantityChanged(props.id)}>Sell Tin</button>
+            <button className="btn btn-primary" onClick={() => props.whenQuantityChanged(props.id)}>Sell Tin</button>
           </div>
            
         </div>

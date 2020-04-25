@@ -9,7 +9,10 @@ function App() {
     <React.Fragment>
       <Header />
       <hr/>
-      <TeaControl />
+      <div className="container-fluid">
+        <TeaControl />
+      </div>
+      
       <Footer />
     </React.Fragment>
   );
