@@ -9,7 +9,7 @@ function Header(){
   return (
     <React.Fragment>
       <div style={headerStyle}>
-        <h1>Tea Distributor</h1>
+        <h1>A Tea-riffic Tea Distributor</h1>
         <h3>Providing exotic teas from around the world!</h3>
       </div>  
     </React.Fragment>

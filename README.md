@@ -76,11 +76,11 @@ This project uses React to make a clean, well organized page.
 <details>
   <summary>Click to expand to view User Stories </summary>
 
-  - As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
-  - As a user, I want to submit a form to add a new keg to a list.
-  - As a user, I want to be able to click on a keg to see its detail page.
-  - As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
-  - As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
+  - [x] As a user, I want to see a list/menu of all available teas. For each tea, I want to see its name, type, origin, flavor, price and an image.
+  - [x] As a user, I want to submit a form to add a new tea to a list.
+  - [x] As a user, I want to be able to click on a tea to see its detail page.
+  - [x] As a user, I want to see how many tins are left for a tea (quantity).
+  - [x] As a user, I want to be able to click a button next to a tea whenever I sell a tin of it. This should decrease the number of tins left by 1. Tins should not be able to go below 0.
 
 </details>
 
@@ -89,13 +89,12 @@ This project uses React to make a clean, well organized page.
 <details>
   <summary>Click to expand to viewFurther Exploration topics </summary>
 
-  - [ ] As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake.
-  - [ ] As a user, I want to be able to delete a keg.
-  - [ ] As a user, I want a keg to update to say "Out of Stock" once it's empty.
-  - [ ] As a user, I want kegs with less than 10 pints to include a message that says "Almost Empty" so I can try a pint before it's gone!
-  - [ ] As a user, I want to have kegs prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of pints left.
+  - [ ] As a user, I want the option to edit a tea's properties after entering them just in case I make a mistake.
+  - [ ] As a user, I want to be able to delete a tea.
+  - [x] As a user, I want a tea to update to say "Out of Stock" once it's empty.
+  - [x] As a user, I want teas with less than 10 pints to include a message that says "Almost Empty" so I can try some before it's gone!
+  - [ ] As a user, I want to have teas prices to be color-coded for easy readability. This could be based on their price, the style of beer or kombucha, or the amount of tins left.
   - [ ] As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)
-
 
 </details>
 
@@ -119,7 +118,6 @@ _Here is a preview of what the output looks like:_
 
 ## Known Bugs
 
-- The buttons to update the quantity on the front page currently not working properly
 - Details page functionality not implemented
 
 <!-- _There are currently no known bugs in this program_ -->

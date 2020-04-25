@@ -1,8 +1,10 @@
 import React from 'react';
 import AddTeaForm from './AddTeaForm';
 import TeaList from './TeaList';
+import TeaDetails from './TeaDetails';
 import { v4 } from "uuid";
 
+// Seed Data
 const masterTeaList = [
   {
     id: v4 (),
@@ -108,10 +110,25 @@ class TeaControl extends React.Component {
     };
   }
 
-  handleToggleForms = () => {
-    this.setState(prevState => ({addFormVisible: !prevState.addFormVisible}));
+  // Handler to find selected tea by id and change state with selectedTea: true
+  handleChangingSelectedTea = (id) => {
+    const selectedTea = this.state.masterTeaList.filter(tea => tea.id === id)[0];
+    this.setState({selectedTea: selectedTea});
   }
 
+  // Handler to find if add form is visible or not and toggle between them with addFormVisible: true/false
+  handleToggleForms = () => {
+    if (this.state.selectedTea != null) {
+      this.setState(() => ({
+        selectedTea: null,
+        addFormVisible: false,
+      }));
+    } else {
+      this.setState(prevState => ({addFormVisible: !prevState.addFormVisible}));
+    }
+  }
+
+  // Handler to find if a new tea is to be added, add tea to list and update list, change back to main page view
   handleAddingTeaToList = (newTea) => {
     const newMasterTeaList = this.state.masterTeaList.concat(newTea);
     this.setState({
@@ -120,6 +137,7 @@ class TeaControl extends React.Component {
     });
   }
 
+  // Handler to find if a specific tea's button to decrease amount pressed and decreases amount, set state to new state and change quantity changed back to false
   handleChangingQuantity = (id) => {
     const quantityChanged = this.state.masterTeaList.filter((tea) => tea.id === id)[0];
     quantityChanged.amount -= 1;
@@ -130,8 +148,21 @@ class TeaControl extends React.Component {
     this.setState({quantityChanged: false});
   }
 
+  // Check which view should be visible due to which state parameter is true/has value, passes values from callback to event handlers
   setVisability = () => {
-    if(this.state.quantityChanged){
+    if (this.state.selectedTea != null) {
+      // Details for single tea
+      return {
+        component: (
+          <TeaDetails
+          onTeaSelection={this.handleChangingSelectedTea}
+            tea={this.state.selectedTea} />
+        ),
+        buttonText: "Return to Tea List",
+      };
+    }
+    else if (this.state.quantityChanged){
+      // Change quantity on main page
       return {
         component: (
           <TeaList
@@ -141,6 +172,7 @@ class TeaControl extends React.Component {
       };
     }
     else if (this.state.addFormVisible) {
+      // Create new tea form view
       return {
         component: (
           <AddTeaForm
@@ -150,8 +182,10 @@ class TeaControl extends React.Component {
       };
     } else {
       return {
+        // Read all, list on main page
         component: (
           <TeaList
+            onTeaSelection={this.handleChangingSelectedTea}
             onQuantityChanged={this.handleChangingQuantity} 
             teaList={this.state.masterTeaList}/>
         ),

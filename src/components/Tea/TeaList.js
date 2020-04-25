@@ -15,6 +15,7 @@ function TeaList(props){
         {props.teaList.map((tea) => (
         <TeaCard 
           whenQuantityChanged={props.onQuantityChanged}
+          whenClicked={props.onTeaSelection}
           name = {tea.name}
           type={tea.type}
           origin={tea.origin}
@@ -32,5 +33,6 @@ function TeaList(props){
 TeaList.propTypes = {
   teaList: PropTypes.array,
   onQuantityChanged: PropTypes.func,
+  onTeaSelection: PropTypes.func,
 };
 export default TeaList;

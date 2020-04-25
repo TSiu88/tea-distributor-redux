@@ -61,7 +61,7 @@ function AddTeaForm(props){
         </div>
         <div className="form-group">
           <label htmlFor="flavor">
-            Flavor:
+            Flavor Description:
             <textarea
               style={formStyle}
               className="form-control"
@@ -72,7 +72,7 @@ function AddTeaForm(props){
         </div>
         <div className="form-group">
           <label htmlFor="price">
-            Price:
+            Price (in dollars): 
             <input
               style={formStyle}
               className="form-control"
@@ -80,20 +80,20 @@ function AddTeaForm(props){
               name="price"
               min= {0}
               step={0.01}
-              placeholder="Price for a small tin of tea in dollars..."
+              placeholder={10}
               required />
           </label>
         </div>
         <div className="form-group">
           <label htmlFor="amount">
-            Amount in Stock:
+            Amount of tins in Stock:
             <input
               style={formStyle}
               className="form-control"
               type="number"
               name="amount"
               min= {0}
-              placeholder="Number of tins of tea in stock..." 
+              placeholder={42}
               required />
           </label>
         </div>
