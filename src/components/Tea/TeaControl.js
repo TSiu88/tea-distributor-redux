@@ -1,9 +1,11 @@
 import React from 'react';
 import AddTeaForm from './AddTeaForm';
 import TeaList from './TeaList';
+import { v4 } from "uuid";
 
 const masterTeaList = [
   {
+    id: v4 (),
     name: "Dragonwell",
     type: "Green Tea",
     origin: "China",
@@ -13,6 +15,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/7004-Dragonwell_House-1.jpg?v=1445269617",
   },
   {
+    id: v4 (),
     name: "Ti Kwan Yin",
     type: "Oolong Tea",
     origin: "China",
@@ -22,6 +25,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ti_Kwan_Yin.jpg?v=1548603635",
   },
   {
+    id: v4 (),
     name: "Sheng Puer Pearls 2014",
     type: "Puer Tea",
     origin: "China",
@@ -31,6 +35,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ms._Zhao_s_Sheng_Puer_Pearl.jpg?v=1554923461",
   },
   {
+    id: v4 (),
     name: "English Breakfast",
     type: "Black Tea Blend",
     origin: "Assam, Ceylon, Kenya",
@@ -40,6 +45,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/9000-Decaf_English_Breakfast.jpg?v=1445269330",
   },
   {
+    id: v4 (),
     name: "Yin Zhen",
     type: "White Tea",
     origin: "China",
@@ -49,6 +55,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_8501_2019_Silver_Needles-1.jpg?v=1571847096",
   },
   {
+    id: v4 (),
     name: "Fu Cha",
     type: "Dark Tea Brick",
     origin: "China",
@@ -58,6 +65,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/IG_posts_-_2020-01-10T105334.704.png?v=1578675295",
   },
   {
+    id: v4 (),
     name: "Gyokuro",
     type: "Green Tea",
     origin: "Japan",
@@ -67,6 +75,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/7701-Gyokuro.jpg?v=1445451386",
   },
   {
+    id: v4 (),
     name: "Darjeeling",
     type: "Black Tea",
     origin: "India",
@@ -76,6 +85,7 @@ const masterTeaList = [
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/1000-TeaSource_Darjeeling-1.jpg?v=1446672895",
   },
   {
+    id: v4 (),
     name: "Green Dragon",
     type: "Oolong Tea",
     origin: "Taiwan",
@@ -109,12 +119,12 @@ class TeaControl extends React.Component {
 
   handleChangingQuantity = (id) => {
     const quantityChanged = this.state.masterTeaList.filter((tea) => tea.id === id)[0];
-    quantityChanged.quantity -= 1;
+    quantityChanged.quantity += -1;
     if (quantityChanged.quantity <= 0) {
       quantityChanged.quantity = 0;
     }
     this.setState({quantityChanged: quantityChanged});
-    this.setState({quantityCharged: false});
+    this.setState({quantityChanged: false});
   }
 
   setVisability = () => {

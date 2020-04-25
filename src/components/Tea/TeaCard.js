@@ -42,6 +42,7 @@ TeaCard.propTypes = {
   price: PropTypes.number,
   amount: PropTypes.number,
   image: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default TeaCard;

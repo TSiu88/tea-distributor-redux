@@ -1,5 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
+import { v4 } from "uuid";
 
 function AddTeaForm(props){
 
@@ -13,6 +14,7 @@ function AddTeaForm(props){
       price: event.target.price.value,
       amount: event.target.amount.value,
       image: event.target.image.value,
+      id: v4(),
     })
   }
 
