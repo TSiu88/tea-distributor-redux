@@ -12,7 +12,7 @@ function TeaList(props){
   return (
     <React.Fragment>
       <div style={listStyle}>
-        {props.teaList.map((tea) =>
+        {props.teaList.map((tea) => (
         <TeaCard 
           whenQuantityChanged={props.onQuantityChanged}
           name = {tea.name}
@@ -23,7 +23,7 @@ function TeaList(props){
           amount={tea.amount}
           image={tea.image}
           id={tea.id} />
-        )}
+        ))}
       </div>
       
     </React.Fragment>

@@ -101,27 +101,30 @@ class TeaControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+      addFormVisible: false,
       masterTeaList: masterTeaList,
       quantityChanged: false,
+      selectedTea: null,
     };
   }
 
   handleToggleForms = () => {
-    this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
+    this.setState(prevState => ({addFormVisible: !prevState.addFormVisible}));
   }
 
   handleAddingTeaToList = (newTea) => {
     const newMasterTeaList = this.state.masterTeaList.concat(newTea);
-    this.setState({masterTeaList: newMasterTeaList,
-      formVisibleOnPage: false});
+    this.setState({
+      masterTeaList: newMasterTeaList,
+      addFormVisible: false
+    });
   }
 
   handleChangingQuantity = (id) => {
     const quantityChanged = this.state.masterTeaList.filter((tea) => tea.id === id)[0];
-    quantityChanged.quantity += -1;
-    if (quantityChanged.quantity <= 0) {
-      quantityChanged.quantity = 0;
+    quantityChanged.amount -= 1;
+    if (quantityChanged.amount <= 0) {
+      quantityChanged.amount = 0;
     }
     this.setState({quantityChanged: quantityChanged});
     this.setState({quantityChanged: false});
@@ -137,7 +140,7 @@ class TeaControl extends React.Component {
         ),
       };
     }
-    else if (this.state.formVisibleOnPage) {
+    else if (this.state.addFormVisible) {
       return {
         component: (
           <AddTeaForm

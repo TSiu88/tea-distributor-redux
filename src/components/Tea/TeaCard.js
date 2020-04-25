@@ -16,7 +16,7 @@ function TeaCard(props){
     <React.Fragment>
       <div className="card" style={cardStyle}>
         <div className="card-info">
-          <img className="card-image" style={imageStyle} src={props.image} />
+          <img className="card-image" alt="Tea" style={imageStyle} src={props.image} />
           <h3><strong>{props.name}</strong></h3>
           <p>Type: {props.type}</p>
           <p>Place of Origin: {props.origin}</p>

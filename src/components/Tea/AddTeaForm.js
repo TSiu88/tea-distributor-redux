@@ -2,6 +2,10 @@ import React from "react";
 import propTypes from "prop-types";
 import { v4 } from "uuid";
 
+const formStyle = {
+  width: 300,
+}
+
 function AddTeaForm(props){
 
   function handleFormSubmission(event){
@@ -25,8 +29,9 @@ function AddTeaForm(props){
           <label htmlFor="name">
             Name:
             <input
+              style={formStyle}
               className="form-control"
-              name="text"
+              type="text"
               name="name"
               placeholder="Jasmine, Matcha..." 
               required/>
@@ -36,6 +41,7 @@ function AddTeaForm(props){
           <label htmlFor="type">
             Type:
             <input
+              style={formStyle}
               className="form-control"
               type="text"
               name="type"
@@ -46,6 +52,7 @@ function AddTeaForm(props){
           <label htmlFor="origin">
             Origin:
             <input
+              style={formStyle}
               className="form-control"
               type="text"
               name="origin"
@@ -55,7 +62,8 @@ function AddTeaForm(props){
         <div className="form-group">
           <label htmlFor="flavor">
             Flavor:
-            <input
+            <textarea
+              style={formStyle}
               className="form-control"
               type="text"
               name="flavor"
@@ -66,20 +74,25 @@ function AddTeaForm(props){
           <label htmlFor="price">
             Price:
             <input
+              style={formStyle}
               className="form-control"
               type="number"
               name="price"
+              min= {0}
+              step={0.01}
               placeholder="Price for a small tin of tea in dollars..."
               required />
           </label>
         </div>
         <div className="form-group">
           <label htmlFor="amount">
-            Stock:
+            Amount in Stock:
             <input
+              style={formStyle}
               className="form-control"
               type="number"
               name="amount"
+              min= {0}
               placeholder="Number of tins of tea in stock..." 
               required />
           </label>
@@ -88,6 +101,7 @@ function AddTeaForm(props){
           <label htmlFor="image">
             Image URL:
             <input
+              style={formStyle}
               className="form-control"
               type="text"
               name="image"
