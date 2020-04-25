@@ -28,16 +28,6 @@ const masterTeaList = [
   },
   {
     id: v4 (),
-    name: "Sheng Puer Pearls 2014",
-    type: "Puer Tea",
-    origin: "China",
-    flavor: "Sweet peach and evergreen notes, smooth with decent body that gets better with age",
-    price: 40,
-    amount: 7,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ms._Zhao_s_Sheng_Puer_Pearl.jpg?v=1554923461",
-  },
-  {
-    id: v4 (),
     name: "English Breakfast",
     type: "Black Tea Blend",
     origin: "Assam, Ceylon, Kenya",
@@ -45,6 +35,16 @@ const masterTeaList = [
     price: 12,
     amount: 35,
     image: "https://cdn.shopify.com/s/files/1/0888/8900/products/9000-Decaf_English_Breakfast.jpg?v=1445269330",
+  },
+  {
+    id: v4 (),
+    name: "Sheng Puer Pearls 2014",
+    type: "Puer Tea",
+    origin: "China",
+    flavor: "Sweet peach and evergreen notes, smooth with decent body that gets better with age",
+    price: 40,
+    amount: 7,
+    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ms._Zhao_s_Sheng_Puer_Pearl.jpg?v=1554923461",
   },
   {
     id: v4 (),
@@ -133,6 +133,9 @@ class TeaControl extends React.Component {
 
   // Handler to find if a new tea is to be added, add tea to list and update list, change back to main page view
   handleAddingTeaToList = (newTea) => {
+    if (newTea.image === "") {
+      newTea.image = "./defaultImage.jpeg";
+    }
     const newMasterTeaList = this.state.masterTeaList.concat(newTea);
     this.setState({
       masterTeaList: newMasterTeaList,

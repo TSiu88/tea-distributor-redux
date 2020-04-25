@@ -105,7 +105,7 @@ function AddTeaForm(props){
               className="form-control"
               type="text"
               name="image"
-              placeholder="Smooth tea with sweet undertones..." />
+              placeholder="http://image.com/tea.jpg" />
           </label>
         </div>
         <button className="btn btn-light" type="submit">Add </button>

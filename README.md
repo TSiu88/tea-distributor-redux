@@ -88,7 +88,7 @@ This project uses React to make a clean, well organized page.  First individual 
 ### Further Exploration
 
 <details>
-  <summary>Click to expand to viewFurther Exploration topics </summary>
+  <summary>Click to expand to view Further Exploration topics </summary>
 
   - [ ] As a user, I want the option to edit a tea's properties after entering them just in case I make a mistake.
   - [ ] As a user, I want to be able to delete a tea.
@@ -108,6 +108,13 @@ _Here is a snippet of what the front page looks like:_
 _Here is a preview of what the add form looks like:_
 
 ![Snippet of add form](./public/snippet2.png)
+
+<details>
+  <summary>Click to expand to view a gif of the Quantity Button </summary>
+
+  ![Animation of QuantityButton functionality](./public/quantityButton.gif)
+
+  </details>
 
 ## Known Bugs
 
