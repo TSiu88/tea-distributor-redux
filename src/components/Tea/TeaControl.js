@@ -2,101 +2,8 @@ import React from 'react';
 import AddTeaForm from './AddTeaForm';
 import TeaList from './TeaList';
 import TeaDetails from './TeaDetails';
-import { v4 } from "uuid";
-
-// Seed Data
-const masterTeaList = [
-  {
-    id: v4 (),
-    name: "Dragonwell",
-    category: "Green Tea",
-    origin: "China",
-    flavor: "Mellow, floral flavor with slightly sweet aftertaste",
-    price: 10,
-    amount: 42,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/7004-Dragonwell_House-1.jpg?v=1445269617",
-  },
-  {
-    id: v4 (),
-    name: "Ti Kwan Yin",
-    category: "Oolong Tea",
-    origin: "China",
-    flavor: "Delicate, green, floral, sweet with mineral note",
-    price: 8,
-    amount: 54,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ti_Kwan_Yin.jpg?v=1548603635",
-  },
-  {
-    id: v4 (),
-    name: "English Breakfast",
-    category: "Black Tea Blend",
-    origin: "Assam, Ceylon, Kenya",
-    flavor: "Full bodied brew, strong and moderately caffeinated.",
-    price: 12,
-    amount: 35,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/9000-Decaf_English_Breakfast.jpg?v=1445269330",
-  },
-  {
-    id: v4 (),
-    name: "Sheng Puer Pearls 2014",
-    category: "Puer Tea",
-    origin: "China",
-    flavor: "Sweet peach and evergreen notes, smooth with decent body that gets better with age",
-    price: 40,
-    amount: 7,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_Ms._Zhao_s_Sheng_Puer_Pearl.jpg?v=1554923461",
-  },
-  {
-    id: v4 (),
-    name: "Yin Zhen",
-    category: "White Tea",
-    origin: "China",
-    flavor: "Sweet, creamy, silky tea",
-    price: 41,
-    amount: 12,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/Standard_Shot_8501_2019_Silver_Needles-1.jpg?v=1571847096",
-  },
-  {
-    id: v4 (),
-    name: "Fu Cha",
-    category: "Dark Tea Brick",
-    origin: "China",
-    flavor: "Sweet, mild, smooth, slight hint of fresh grass",
-    price: 17,
-    amount: 36,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/IG_posts_-_2020-01-10T105334.704.png?v=1578675295",
-  },
-  {
-    id: v4 (),
-    name: "Gyokuro",
-    category: "Green Tea",
-    origin: "Japan",
-    flavor: "Sweet, seaweed-y, with brothy body",
-    price: 28,
-    amount: 18,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/7701-Gyokuro.jpg?v=1445451386",
-  },
-  {
-    id: v4 (),
-    name: "Darjeeling",
-    category: "Black Tea",
-    origin: "India",
-    flavor: "Medium bodied, smooth, hints of muscatel, fresh taste with delicate nuances in flavor",
-    price: 6,
-    amount: 85,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/1000-TeaSource_Darjeeling-1.jpg?v=1446672895",
-  },
-  {
-    id: v4 (),
-    name: "Green Dragon",
-    category: "Oolong Tea",
-    origin: "Taiwan",
-    flavor: "Silky, medium bodied, sweet and fruity notes, light lingering aftertaste",
-    price: 11,
-    amount: 56,
-    image: "https://cdn.shopify.com/s/files/1/0888/8900/products/6405-Green_Dragon.jpg?v=1445450870",
-  },
-];
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const buttonStyler = {
   marginLeft: 20,
@@ -107,7 +14,6 @@ class TeaControl extends React.Component {
     super(props);
     this.state = {
       addFormVisible: false,
-      masterTeaList: masterTeaList,
       quantityChanged: false,
       selectedTea: null,
     };
@@ -115,7 +21,7 @@ class TeaControl extends React.Component {
 
   // Handler to find selected tea by id and change state with selectedTea: true
   handleChangingSelectedTea = (id) => {
-    const selectedTea = this.state.masterTeaList.filter(tea => tea.id === id)[0];
+    const selectedTea = this.props.masterTeaList[id];
     this.setState({selectedTea: selectedTea});
   }
 
@@ -136,16 +42,29 @@ class TeaControl extends React.Component {
     if (newTea.image === "") {
       newTea.image = "./defaultImage.jpeg";
     }
-    const newMasterTeaList = this.state.masterTeaList.concat(newTea);
+    const { dispatch } = this.props;
+    const { id, name, category, origin, flavor, price, amount, image } = newTea;
+    const action = {
+      type: 'ADD_TEA',
+      id: id,
+      name: name,
+      category: category,
+      origin: origin,
+      flavor: flavor,
+      price: price,
+      amount: amount,
+      image: image
+    }
+    console.log("ACTION", action);
+    dispatch(action);
     this.setState({
-      masterTeaList: newMasterTeaList,
       addFormVisible: false
     });
   }
 
   // Handler to find if a specific tea's button to decrease amount pressed and decreases amount, set state to new state and change quantity changed back to false
   handleChangingQuantity = (id) => {
-    const quantityChanged = this.state.masterTeaList.filter((tea) => tea.id === id)[0];
+    const quantityChanged = this.props.masterTeaList[id];
     quantityChanged.amount -= 1;
     if (quantityChanged.amount <= 0) {
       quantityChanged.amount = 0;
@@ -173,7 +92,7 @@ class TeaControl extends React.Component {
         component: (
           <TeaList
             onQuantityChanged={this.handleChangingQuantity}
-            teaList={this.state.masterTeaList} />
+            teaList={this.props.masterTeaList} />
         ),
       };
     }
@@ -193,7 +112,7 @@ class TeaControl extends React.Component {
           <TeaList
             onTeaSelection={this.handleChangingSelectedTea}
             onQuantityChanged={this.handleChangingQuantity} 
-            teaList={this.state.masterTeaList}/>
+            teaList={this.props.masterTeaList}/>
         ),
         buttonText: "Add Tea",
       };
@@ -205,7 +124,12 @@ class TeaControl extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <button className="btn btn-primary" onClick={this.handleToggleForms} style={buttonStyler}>{currentlyVisibleState.buttonText}</button>
+          <button 
+            className="btn btn-primary" 
+            onClick={this.handleToggleForms} 
+            style={buttonStyler}>
+              {currentlyVisibleState.buttonText}
+          </button>
           {currentlyVisibleState.component}
         </div>
         
@@ -213,5 +137,17 @@ class TeaControl extends React.Component {
     )
   }
 }
+
+TeaControl.propTypes = {
+  masterTeaList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    masterTeaList: state.masterTeaList,
+  }
+}
+
+TeaControl = connect(mapStateToProps)(TeaControl);
 
 export default TeaControl;

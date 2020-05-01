@@ -1,4 +1,6 @@
-export default (state = {}, action) => {
+import initialState from '../initialState';
+
+export default (state = initialState, action) => {
   switch(action.type){
     case 'ADD_TEA':
       const { id, name, category, origin, flavor, price, amount, image } = action;

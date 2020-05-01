@@ -12,26 +12,26 @@ function TeaList(props){
   return (
     <React.Fragment>
       <div style={listStyle}>
-        {props.teaList.map((tea) => (
-        <TeaCard 
-          whenQuantityChanged={props.onQuantityChanged}
-          whenClicked={props.onTeaSelection}
-          name = {tea.name}
-          category={tea.category}
-          origin={tea.origin}
-          flavor={tea.flavor}
-          price={tea.price}
-          amount={tea.amount}
-          image={tea.image}
-          id={tea.id} />
-        ))}
+        {Object.values(props.teaList).map((tea) => {
+          return <TeaCard 
+            whenQuantityChanged={props.onQuantityChanged}
+            whenClicked={props.onTeaSelection}
+            name = {tea.name}
+            category={tea.category}
+            origin={tea.origin}
+            flavor={tea.flavor}
+            price={tea.price}
+            amount={tea.amount}
+            image={tea.image}
+            id={tea.id}
+            key={tea.id} />
+          })}
       </div>
-      
     </React.Fragment>
   );
 }
 TeaList.propTypes = {
-  teaList: PropTypes.array,
+  teaList: PropTypes.object,
   onQuantityChanged: PropTypes.func,
   onTeaSelection: PropTypes.func,
 };
