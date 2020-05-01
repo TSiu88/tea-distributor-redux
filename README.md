@@ -12,19 +12,21 @@
 ---
 ## Table of Contents
 1. [Description](#description)
-    - [Component Diagram](#component-diagram)
+    - [Wireframe/Component Diagram](#wireframe/component-diagram)
 2. [Setup/Installation Requirements](#setup/installation-requirements)
     - [Requirements to Run](#requirements-to-run)
     - [Instructions](#instructions)
     - [Other Technologies Used](#other-technologies-used)
 3. [Notable Features](#notable-features)
 4. [Specifications](#specifications)
+    - [Assignment Objectives](#assignment-objectives)
     - [User Stories](#user-stories)
     - [Further Exploration](#further-exploration)
 5. [Screenshots](#screenshots)
-6. [Known Bugs](#known-bugs)
-7. [Support and Contact Details](#support-and-contact-details)
-8. [License](#license)
+6. [Test Case Examples](#test-case-examples)
+7. [Known Bugs](#known-bugs)
+8. [Support and Contact Details](#support-and-contact-details)
+9. [License](#license)
 ---
 ## Description
 
@@ -32,7 +34,7 @@ This application is the Week 17 Friday independent assignment for Epicodus' full
 
 This application is for a tea shop or distributor to keep track of their stock of teas.  It has details on what they tea is named, type, country of origin, price, amount in stock, and a picture for each tea.  Then a button can be clicked on the main page to decrease the stock by one as they are sold.  A single tea's details along with ID number can be seen on a details page.  More teas can be added and require a name, price, and amount minimum to create.
 
-### Component Diagram
+### Wireframe/Component Diagram
 
 ![Component Diagram](./public/Component-Diagram.png)
 
@@ -74,6 +76,15 @@ This application is for a tea shop or distributor to keep track of their stock o
 This project uses Redux in all states to show proof of concept and understanding of using Redux, even if local states do not require to be handled by Redux.
 
 ## Specifications
+
+### Assigment Objectives
+Update application from last week to incorporate Redux.
+
+Requirements for the refactor:
+  - All state in your application should be handled by Redux (even if React can handle it locally).
+  - All reducers should be tested thoroughly, and all tests must be passing.
+  - Action creators and constants should be used.
+
 
 ### User Stories
 <details>
@@ -117,6 +128,17 @@ _Here is a preview of what the add form looks like:_
   ![Animation of QuantityButton functionality](./public/quantityButton.gif)
 
   </details>
+
+## Test Case Examples
+_Tests are done through Jest and are run from the command line prompt with `npm test`._
+
+<!-- _Some example tests:_
+
+![Snippet of an example test](img/tester1.png)
+
+![Snippet of an example result](img/tester2.png) -->
+
+<!-- _describe and show how to run tests with `code` examples}_ -->
 
 ## Known Bugs
 

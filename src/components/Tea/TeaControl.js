@@ -9,7 +9,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Dragonwell",
-    type: "Green Tea",
+    category: "Green Tea",
     origin: "China",
     flavor: "Mellow, floral flavor with slightly sweet aftertaste",
     price: 10,
@@ -19,7 +19,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Ti Kwan Yin",
-    type: "Oolong Tea",
+    category: "Oolong Tea",
     origin: "China",
     flavor: "Delicate, green, floral, sweet with mineral note",
     price: 8,
@@ -29,7 +29,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "English Breakfast",
-    type: "Black Tea Blend",
+    category: "Black Tea Blend",
     origin: "Assam, Ceylon, Kenya",
     flavor: "Full bodied brew, strong and moderately caffeinated.",
     price: 12,
@@ -39,7 +39,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Sheng Puer Pearls 2014",
-    type: "Puer Tea",
+    category: "Puer Tea",
     origin: "China",
     flavor: "Sweet peach and evergreen notes, smooth with decent body that gets better with age",
     price: 40,
@@ -49,7 +49,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Yin Zhen",
-    type: "White Tea",
+    category: "White Tea",
     origin: "China",
     flavor: "Sweet, creamy, silky tea",
     price: 41,
@@ -59,7 +59,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Fu Cha",
-    type: "Dark Tea Brick",
+    category: "Dark Tea Brick",
     origin: "China",
     flavor: "Sweet, mild, smooth, slight hint of fresh grass",
     price: 17,
@@ -69,7 +69,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Gyokuro",
-    type: "Green Tea",
+    category: "Green Tea",
     origin: "Japan",
     flavor: "Sweet, seaweed-y, with brothy body",
     price: 28,
@@ -79,7 +79,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Darjeeling",
-    type: "Black Tea",
+    category: "Black Tea",
     origin: "India",
     flavor: "Medium bodied, smooth, hints of muscatel, fresh taste with delicate nuances in flavor",
     price: 6,
@@ -89,7 +89,7 @@ const masterTeaList = [
   {
     id: v4 (),
     name: "Green Dragon",
-    type: "Oolong Tea",
+    category: "Oolong Tea",
     origin: "Taiwan",
     flavor: "Silky, medium bodied, sweet and fruity notes, light lingering aftertaste",
     price: 11,

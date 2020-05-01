@@ -15,7 +15,7 @@ function TeaDetails(props) {
         <img className="imageStyle" alt={tea.name} src={tea.image} />
         <p><strong>{tea.name}</strong></p>
         <p>ID: {tea.id}</p>
-        <p>Type: {tea.type}</p>
+        <p>Category: {tea.category}</p>
         <p>Origin: {tea.origin}</p>
         <p>Flavor Description: {tea.flavor}</p>
         <p>Price: ${tea.price}</p>

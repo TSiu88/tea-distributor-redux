@@ -17,7 +17,7 @@ function TeaList(props){
           whenQuantityChanged={props.onQuantityChanged}
           whenClicked={props.onTeaSelection}
           name = {tea.name}
-          type={tea.type}
+          category={tea.category}
           origin={tea.origin}
           flavor={tea.flavor}
           price={tea.price}

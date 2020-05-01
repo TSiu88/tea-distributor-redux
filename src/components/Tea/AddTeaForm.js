@@ -12,7 +12,7 @@ function AddTeaForm(props){
     event.preventDefault();
     props.onAddTea({
       name: event.target.name.value,
-      type: event.target.type.value,
+      category: event.target.category.value,
       origin: event.target.origin.value,
       flavor: event.target.flavor.value,
       price: event.target.price.value,
@@ -38,13 +38,13 @@ function AddTeaForm(props){
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="type">
-            Type:
+          <label htmlFor="category">
+            Category:
             <input
               style={formStyle}
               className="form-control"
               type="text"
-              name="type"
+              name="category"
               placeholder="Black, Green, White..." />
           </label>
         </div>

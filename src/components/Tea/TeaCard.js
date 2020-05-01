@@ -38,7 +38,7 @@ function TeaCard(props){
         <div className="card-info" style={infoStyle} onClick={() => props.whenClicked(props.id)}>
           <img className="card-image" alt="Tea" style={imageStyle} src={props.image} />
           <h3><strong>{props.name}</strong></h3>
-          <p>Type: {props.type}</p>
+          <p>Category: {props.category}</p>
           <p>Place of Origin: {props.origin}</p>
           <p>Flavor Description: {props.flavor}</p>
           <p>Price: ${props.price}</p>
@@ -60,7 +60,7 @@ TeaCard.propTypes = {
   whenQuantityChanged: PropTypes.func,
   whenClicked: PropTypes.func,
   name: PropTypes.string,
-  type: PropTypes.string,
+  category: PropTypes.string,
   origin: PropTypes.string,
   flavor: PropTypes.string,
   price: PropTypes.number,
