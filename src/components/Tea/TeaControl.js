@@ -4,6 +4,7 @@ import TeaList from './TeaList';
 import TeaDetails from './TeaDetails';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as a from './../../actions';
 
 const buttonStyler = {
   marginLeft: 20,
@@ -33,9 +34,7 @@ class TeaControl extends React.Component {
       }));
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_ADD_FORM'
-      }
+      const action = a.toggleAddForm();
       dispatch(action);
     }
   }
@@ -46,22 +45,9 @@ class TeaControl extends React.Component {
       newTea.image = "./defaultImage.jpeg";
     }
     const { dispatch } = this.props;
-    const { id, name, category, origin, flavor, price, amount, image } = newTea;
-    const action = {
-      type: 'ADD_TEA',
-      id: id,
-      name: name,
-      category: category,
-      origin: origin,
-      flavor: flavor,
-      price: price,
-      amount: amount,
-      image: image
-    }
+    const action = a.addTea(newTea);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_ADD_FORM'
-    }
+    const action2 = a.toggleAddForm();
     dispatch(action2);
   }
 
