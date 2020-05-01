@@ -29,7 +29,7 @@ export const decreaseQuantity = (tea) => {
     origin: origin,
     flavor: flavor,
     price: price,
-    amount: (amount - 1),
+    amount: ((amount - 1) < 0 ? 0 : (amount -1)),
     image: image
   }
 }

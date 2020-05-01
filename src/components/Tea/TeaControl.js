@@ -14,7 +14,6 @@ class TeaControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantityChanged: false,
       selectedTea: null,
     };
   }
@@ -57,7 +56,6 @@ class TeaControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.decreaseQuantity(quantityChanged);
     dispatch(action);
-    this.setState({quantityChanged: false});
   }
 
   // Check which view should be visible due to which state parameter is true/has value, passes values from callback to event handlers
@@ -71,16 +69,6 @@ class TeaControl extends React.Component {
             tea={this.state.selectedTea} />
         ),
         buttonText: "Return to Tea List",
-      };
-    }
-    else if (this.state.quantityChanged){
-      // Change quantity on main page
-      return {
-        component: (
-          <TeaList
-            onQuantityChanged={this.handleChangingQuantity}
-            teaList={this.props.masterTeaList} />
-        ),
       };
     }
     else if (this.props.addFormVisible) {
