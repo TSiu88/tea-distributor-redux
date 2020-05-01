@@ -1,10 +1,9 @@
 import teaListReducer from '../../reducers/tea-list-reducer';
 import { v4 } from 'uuid';
-import * as c from './../../actions/ActionTypes';
+import * as a from './../../actions/index';
 
 describe('teaListReducer', () => {
 
-  let action;
   const firstId = v4();
   const secondId = v4();
   const currentState = {
@@ -36,19 +35,8 @@ describe('teaListReducer', () => {
 
   test('Should successfully add new tea card data to tea list', () => {
     const { id, name, category, origin, flavor, price, amount, image } = currentState[firstId];
-    action = {
-      type: c.ADD_OR_UPDATE_TEA,
-      id: id,
-      name: name,
-      category: category,
-      origin: origin,
-      flavor: flavor,
-      price: price,
-      amount: amount,
-      image: image
-    };
     
-    expect(teaListReducer({}, action)).toEqual({
+    expect(teaListReducer({}, a.addOrUpdateTea(currentState[firstId]))).toEqual({
       [id] : {
         id: id,
         name: name,
@@ -57,6 +45,23 @@ describe('teaListReducer', () => {
         flavor: flavor,
         price: price,
         amount: amount,
+        image: image
+      }
+    });
+  });
+
+  test('Should successfully decrease amount of tea for a specific tea', () => {
+    const { id, name, category, origin, flavor, price, amount, image } = currentState[secondId];
+    
+    expect(teaListReducer({}, a.decreaseQuantity(currentState[secondId]))).toEqual({
+      [id] : {
+        id: id,
+        name: name,
+        category: category,
+        origin: origin,
+        flavor: flavor,
+        price: price,
+        amount: (amount - 1),
         image: image
       }
     });

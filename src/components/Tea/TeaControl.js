@@ -54,11 +54,9 @@ class TeaControl extends React.Component {
   // Handler to find if a specific tea's button to decrease amount pressed and decreases amount, set state to new state and change quantity changed back to false
   handleChangingQuantity = (id) => {
     const quantityChanged = this.props.masterTeaList[id];
-    quantityChanged.amount -= 1;
-    if (quantityChanged.amount <= 0) {
-      quantityChanged.amount = 0;
-    }
-    this.setState({quantityChanged: quantityChanged});
+    const { dispatch } = this.props;
+    const action = a.decreaseQuantity(quantityChanged);
+    dispatch(action);
     this.setState({quantityChanged: false});
   }
 

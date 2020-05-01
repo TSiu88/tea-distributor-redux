@@ -18,3 +18,18 @@ export const addOrUpdateTea = (tea) => {
     image: image
   }
 }
+
+export const decreaseQuantity = (tea) => {
+  const { id, name, category, origin, flavor, price, amount, image } = tea;
+  return {
+    type: c.ADD_OR_UPDATE_TEA,
+    id: id,
+    name: name,
+    category: category,
+    origin: origin,
+    flavor: flavor,
+    price: price,
+    amount: (amount - 1),
+    image: image
+  }
+}
