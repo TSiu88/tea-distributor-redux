@@ -1,12 +1,12 @@
-# _[Tea Distributor](https://github.com/TSiu88/#)_
+# _[Tea Distributor Redux](https://github.com/TSiu88/https://github.com/TSiu88/tea-distributor-redux)_
 
-#### _Week 16 Friday Independent Assignment for Epicodus, 04.24.2020_
+#### _Week 17 Friday Independent Assignment for Epicodus, 05.01.2020_
 
 #### By _**Tiffany Siu**_
 
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
-![LastCommit](https://img.shields.io/github/last-commit/tsiu88/tea-distributor)
-![Languages](https://img.shields.io/github/languages/top/tsiu88/tea-distributor)
+![LastCommit](https://img.shields.io/github/last-commit/tsiu88/tea-distributor-redux)
+![Languages](https://img.shields.io/github/languages/top/tsiu88/tea-distributor-redux)
 [![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
 
 ---
@@ -28,7 +28,7 @@
 ---
 ## Description
 
-This application is the Week 16 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course. This is an application made to show a React application made with functionality that correctly uses components, states, and properties.  A component diagram is also to be included to show the structure of the components.
+This application is the Week 17 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course. This is an application made in the previous week to show a React application which has been refactored so that all states use Redux and includes testing, action creators, and action constants.  A component diagram is also to be included to show the structure of the components.
 
 This application is for a tea shop or distributor to keep track of their stock of teas.  It has details on what they tea is named, type, country of origin, price, amount in stock, and a picture for each tea.  Then a button can be clicked on the main page to decrease the stock by one as they are sold.  A single tea's details along with ID number can be seen on a details page.  More teas can be added and require a name, price, and amount minimum to create.
 
@@ -50,7 +50,7 @@ This application is for a tea shop or distributor to keep track of their stock o
 *This application may be viewed by:*
 
 1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
-2. Clone the [repository](https://github.com/TSiu88/tea-distributor.git) from my [GitHub page](https://github.com/TSiu88)
+2. Clone the [repository](https://github.com/TSiu88/tea-distributor-redux.git) from my [GitHub page](https://github.com/TSiu88)
 3. Use a command line/Bash to move to the project directory with `cd project-directory`
 4. Run `npm install` to get all dependencies. 
 5. Run `npm run start` to start up the program
@@ -62,14 +62,16 @@ This application is for a tea shop or distributor to keep track of their stock o
 * _CSS_
 * _Javascript_
 * _React_
+* _Redux_
 * _Bootstrap 4.4.1_
 * _ESLint_
 * _Babel_
 * _Jest_
+* _[Draw.io](https://app.diagrams.net/)_
 * _Markdown_
 
 ## Notable Features
-This project uses React to make a clean, well organized page.  First individual React project done.
+This project uses Redux in all states to show proof of concept and understanding of using Redux, even if local states do not require to be handled by Redux.
 
 ## Specifications
 
