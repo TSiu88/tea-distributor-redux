@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import teaListReducer from '../../reducers/tea-list-reducer';
 import addFormVisibleReducer from '../../reducers/add-form-visible-reducer';
 import { v4 } from 'uuid';
+import * as c from './../../actions/ActionTypes';
 
 let store = createStore(rootReducer);
 
@@ -26,7 +27,7 @@ describe('rootReducer', () => {
 
   test('Check that teaListReducer matches root reducer when adding tea', () => {
     const action = {
-      type: 'ADD_TEA',
+      type: c.ADD_OR_UPDATE_TEA,
       id: v4(),
       name: "Ti Kwan Yin",
       category: "Oolong Tea",
@@ -42,7 +43,7 @@ describe('rootReducer', () => {
 
   test('Check that addFormVisibleReducer matches root reducer when toggle', () => {
     const action = {
-      type: 'TOGGLE_ADD_FORM'
+      type: c.TOGGLE_ADD_FORM
     }
     store.dispatch(action);
     expect(store.getState().addFormVisible).toEqual(addFormVisibleReducer(undefined, action));

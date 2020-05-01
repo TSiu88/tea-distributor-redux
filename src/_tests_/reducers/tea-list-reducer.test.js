@@ -1,5 +1,6 @@
 import teaListReducer from '../../reducers/tea-list-reducer';
 import { v4 } from 'uuid';
+import * as c from './../../actions/ActionTypes';
 
 describe('teaListReducer', () => {
 
@@ -36,7 +37,7 @@ describe('teaListReducer', () => {
   test('Should successfully add new tea card data to tea list', () => {
     const { id, name, category, origin, flavor, price, amount, image } = currentState[firstId];
     action = {
-      type: 'ADD_TEA',
+      type: c.ADD_OR_UPDATE_TEA,
       id: id,
       name: name,
       category: category,

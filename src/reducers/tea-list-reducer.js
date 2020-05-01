@@ -1,8 +1,9 @@
 import initialState from '../initialState';
+import * as c from './../actions/ActionTypes';
 
 export default (state = initialState, action) => {
   switch(action.type){
-    case 'ADD_TEA':
+    case c.ADD_OR_UPDATE_TEA:
       const { id, name, category, origin, flavor, price, amount, image } = action;
       return Object.assign({}, state, {
         [id] : {

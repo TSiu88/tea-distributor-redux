@@ -45,7 +45,7 @@ class TeaControl extends React.Component {
       newTea.image = "./defaultImage.jpeg";
     }
     const { dispatch } = this.props;
-    const action = a.addTea(newTea);
+    const action = a.addOrUpdateTea(newTea);
     dispatch(action);
     const action2 = a.toggleAddForm();
     dispatch(action2);

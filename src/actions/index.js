@@ -1,11 +1,13 @@
+import * as c from './ActionTypes';
+
 export const toggleAddForm = () => ({
-  type: 'TOGGLE_ADD_FORM'
+  type: c.TOGGLE_ADD_FORM
 });
 
-export const addTea = (tea) => {
+export const addOrUpdateTea = (tea) => {
   const { id, name, category, origin, flavor, price, amount, image } = tea;
   return {
-    type: 'ADD_TEA',
+    type: c.ADD_OR_UPDATE_TEA,
     id: id,
     name: name,
     category: category,
