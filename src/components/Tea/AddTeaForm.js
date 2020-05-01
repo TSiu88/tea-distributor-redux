@@ -15,8 +15,8 @@ function AddTeaForm(props){
       category: event.target.category.value,
       origin: event.target.origin.value,
       flavor: event.target.flavor.value,
-      price: event.target.price.value,
-      amount: event.target.amount.value,
+      price: parseInt(event.target.price.value),
+      amount: parseInt(event.target.amount.value),
       image: event.target.image.value,
       id: v4(),
     })

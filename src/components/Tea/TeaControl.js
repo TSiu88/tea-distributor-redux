@@ -13,7 +13,6 @@ class TeaControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addFormVisible: false,
       quantityChanged: false,
       selectedTea: null,
     };
@@ -33,7 +32,11 @@ class TeaControl extends React.Component {
         addFormVisible: false,
       }));
     } else {
-      this.setState(prevState => ({addFormVisible: !prevState.addFormVisible}));
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_ADD_FORM'
+      }
+      dispatch(action);
     }
   }
 
@@ -55,11 +58,11 @@ class TeaControl extends React.Component {
       amount: amount,
       image: image
     }
-    console.log("ACTION", action);
     dispatch(action);
-    this.setState({
-      addFormVisible: false
-    });
+    const action2 = {
+      type: 'TOGGLE_ADD_FORM'
+    }
+    dispatch(action2);
   }
 
   // Handler to find if a specific tea's button to decrease amount pressed and decreases amount, set state to new state and change quantity changed back to false
@@ -96,7 +99,7 @@ class TeaControl extends React.Component {
         ),
       };
     }
-    else if (this.state.addFormVisible) {
+    else if (this.props.addFormVisible) {
       // Create new tea form view
       return {
         component: (
@@ -145,6 +148,7 @@ TeaControl.propTypes = {
 const mapStateToProps = state => {
   return {
     masterTeaList: state.masterTeaList,
+    addFormVisible: state.addFormVisible,
   }
 }
 

@@ -4,11 +4,11 @@ import './index.css';
 import App from './components/App.js';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
-import teaListReducer from './reducers/tea-list-reducer';
+import rootReducer from './reducers/index';
 import initialState from './initialState';
 import { Provider } from 'react-redux';
 
-const store = createStore(teaListReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(rootReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>
