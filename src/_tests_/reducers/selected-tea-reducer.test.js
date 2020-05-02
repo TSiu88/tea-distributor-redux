@@ -1,5 +1,4 @@
 import selectedTeaReducer from './../../reducers/selected-tea-reducer';
-import { v4 } from 'uuid';
 import * as a from './../../actions/index';
 import initialState from './../../initialState';
 

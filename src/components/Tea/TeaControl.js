@@ -11,35 +11,22 @@ const buttonStyler = {
 };
 class TeaControl extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedTea: null,
-    };
-  }
-
-  // Handler to find selected tea by id and change state with selectedTea: true
+  // Handler to find selected tea by id and change state with selectedTea
   handleChangingSelectedTea = (id) => {
-    const selectedTea = this.props.masterTeaList[id];
-    this.setState({selectedTea: selectedTea});
-    // UPDATING STATE FOR SELECTED BUT NOT PROPS
-    // const { dispatch } = this.props;
-    // const action = a.selectedTea(selectedTea);
-    // dispatch(action);
+    //const selectTea = this.props.masterTeaList[id];
+    const { dispatch } = this.props;
+    const action = a.selectedTea(id);
+    dispatch(action);
   }
 
   // Handler to find if add form is visible or not and toggle between them with addFormVisible: true/false
   handleToggleForms = () => {
-    if (this.state.selectedTea != null) {
-      this.setState(() => ({
-        selectedTea: null,
-      }));
+    if (this.props.selectedTea != null) {
       const { dispatch } = this.props;
       const action = a.cancelAddForm();
       dispatch(action);
-      // UNSELECT ALSO NOT WORKING
-      // const action2 = a.unselectTea();
-      // dispatch(action2);
+      const action2 = a.unselectTea();
+      dispatch(action2);
     } else {
       const { dispatch } = this.props;
       const action = a.toggleAddForm();
@@ -69,13 +56,13 @@ class TeaControl extends React.Component {
 
   // Check which view should be visible due to which state parameter is true/has value, passes values from callback to event handlers
   setVisability = () => {
-    if (this.state.selectedTea != null) {
+    if (this.props.selectedTea != null) {
       // Details for single tea
       return {
         component: (
           <TeaDetails
           onTeaSelection={this.handleChangingSelectedTea}
-            tea={this.state.selectedTea} />
+            tea={this.props.selectedTea} />
         ),
         buttonText: "Return to Tea List",
       };

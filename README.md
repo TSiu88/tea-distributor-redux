@@ -142,7 +142,8 @@ _Tests are done through Jest and are run from the command line prompt with `npm 
 
 ## Known Bugs
 
-_There are currently no known bugs in this program_
+- [ ] Selecting a new tea outside of the initial state ones causes a reducer/state undefined error
+<!-- _There are currently no known bugs in this program_ -->
 
 ## Support and contact details
 

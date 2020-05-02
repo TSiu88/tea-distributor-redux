@@ -3,6 +3,7 @@ import initialState from '../../initialState';
 import { createStore } from 'redux';
 import teaListReducer from '../../reducers/tea-list-reducer';
 import addFormVisibleReducer from '../../reducers/add-form-visible-reducer';
+import selectedTeaReducer from '../../reducers/selected-tea-reducer';
 import { v4 } from 'uuid';
 import * as a from './../../actions/index';
 
@@ -37,7 +38,8 @@ describe('rootReducer', () => {
   test('Should return default state if no action type is recognized', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterTeaList: initialState,
-      addFormVisible: false
+      addFormVisible: false,
+      selectedTea: null
     });
   });
 
@@ -47,6 +49,10 @@ describe('rootReducer', () => {
 
   test('Check that initial state of addFormVisibleReducer matches root reducer', () => {
     expect(store.getState().addFormVisible).toEqual(addFormVisibleReducer(undefined, {type: null}));
+  });
+
+  test('Check that initial state of selectedTeaReducer matches root reducer', () => {
+    expect(store.getState().selectedTea).toEqual(selectedTeaReducer(undefined, {type: null}));
   });
 
   test('Check that teaListReducer matches root reducer when adding tea', () => {

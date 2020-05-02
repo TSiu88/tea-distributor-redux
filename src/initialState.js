@@ -12,6 +12,8 @@ const eighthId = v4();
 const ninthId = v4();
 
 export default {
+  selectedTea: null,
+  addFormVisible: false,
   masterTeaList: {
     [firstId] : {
       id: firstId,

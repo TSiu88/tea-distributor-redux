@@ -9,26 +9,11 @@ export const cancelAddForm = () => ({
 });
 
 export const selectedTea = (id) => {
-  return {
+  return { 
     type:c.SELECTED_TEA,
-    id: id 
+    id: id,
   };
 }
-
-// export const selectedTea = (tea) => {
-//   const { id, name, category, origin, flavor, price, amount, image } = tea;
-//   return {
-//     type:c.SELECTED_TEA,
-//     id: id,
-//     name: name,
-//     category: category,
-//     origin: origin,
-//     flavor: flavor,
-//     price: price,
-//     amount: amount,
-//     image: image
-//   };
-// }
 
 export const unselectTea = () => {
   return {
