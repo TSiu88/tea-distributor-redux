@@ -22,6 +22,10 @@ class TeaControl extends React.Component {
   handleChangingSelectedTea = (id) => {
     const selectedTea = this.props.masterTeaList[id];
     this.setState({selectedTea: selectedTea});
+    // UPDATING STATE FOR SELECTED BUT NOT PROPS
+    // const { dispatch } = this.props;
+    // const action = a.selectedTea(selectedTea);
+    // dispatch(action);
   }
 
   // Handler to find if add form is visible or not and toggle between them with addFormVisible: true/false
@@ -29,8 +33,13 @@ class TeaControl extends React.Component {
     if (this.state.selectedTea != null) {
       this.setState(() => ({
         selectedTea: null,
-        addFormVisible: false,
       }));
+      const { dispatch } = this.props;
+      const action = a.cancelAddForm();
+      dispatch(action);
+      // UNSELECT ALSO NOT WORKING
+      // const action2 = a.unselectTea();
+      // dispatch(action2);
     } else {
       const { dispatch } = this.props;
       const action = a.toggleAddForm();
@@ -121,6 +130,7 @@ const mapStateToProps = state => {
   return {
     masterTeaList: state.masterTeaList,
     addFormVisible: state.addFormVisible,
+    selectedTea: state.selectedTea,
   }
 }
 

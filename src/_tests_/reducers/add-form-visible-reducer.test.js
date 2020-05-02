@@ -9,4 +9,8 @@ describe('addFormVisibleReducer', () => {
   test('Should toggle addFormVisible to true', () => {
     expect(addFormVisibleReducer(false, { type: c.TOGGLE_ADD_FORM })).toEqual(true);
   });
+
+  test('Should cancel addFormVisible to false', () => {
+    expect(addFormVisibleReducer(true, { type: c.CANCEL_ADD_FORM })).toEqual(false);
+  });
 });
