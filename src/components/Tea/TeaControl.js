@@ -13,9 +13,9 @@ class TeaControl extends React.Component {
 
   // Handler to find selected tea by id and change state with selectedTea
   handleChangingSelectedTea = (id) => {
-    //const selectTea = this.props.masterTeaList[id];
+    const selectTea = this.props.masterTeaList[id];
     const { dispatch } = this.props;
-    const action = a.selectedTea(id);
+    const action = a.selectedTea(id, selectTea);
     dispatch(action);
   }
 

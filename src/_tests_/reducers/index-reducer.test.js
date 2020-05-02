@@ -39,7 +39,7 @@ describe('rootReducer', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterTeaList: initialState,
       addFormVisible: false,
-      selectedTea: null
+      selectedTea: initialState
     });
   });
 
