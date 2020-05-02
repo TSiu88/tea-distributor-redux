@@ -5,10 +5,15 @@ export const toggleAddForm = () => ({
 });
 
 export const selectedTea = (id) => {
-  //const tea = masterTeaList.find(item => item.id === id);
   return {
     type:c.SELECTED_TEA,
-    payload: id 
+    id: id 
+  };
+}
+
+export const unselectTea = () => {
+  return {
+    type:c.UNSELECT_TEA,
   };
 }
 
